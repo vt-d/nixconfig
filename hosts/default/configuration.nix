@@ -22,7 +22,7 @@
   hardware.opentabletdriver.enable = true;
 
 
-  # graphics support... nixos, correctly name and separate your modules!!! 
+  # graphics support... nix, correctly name and separate your modules!!! 
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.extraPackages = with pkgs; [
