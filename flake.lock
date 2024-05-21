@@ -459,11 +459,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1716226753,
-        "narHash": "sha256-mZMQrkolQbZ87O7pIzNY6lJQTuFNjtjmXHg1WdsA8yU=",
+        "lastModified": 1716281455,
+        "narHash": "sha256-kLNKOgSL/KjtI7dnWRmjpm2dA43+iqSPwXMbmrANU4s=",
         "owner": "vt-d",
         "repo": "nvim",
-        "rev": "542af71bbab2f65e09a63507766225f42b7a5373",
+        "rev": "455e689c6fdc62ad77e83a994219a67271529585",
         "type": "github"
       },
       "original": {
