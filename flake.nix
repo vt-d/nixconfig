@@ -4,10 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    neovim = {
-      url = "github:vt-d/nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    neovim.url = "github:vt-d/nvim";
 
     # hypr
     hyprland.url = "github:hyprwm/Hyprland";
@@ -35,8 +32,8 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-	inherit pkgs;
       };
+      pkgs = pkgs;
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
