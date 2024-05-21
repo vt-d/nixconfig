@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    neovim = {
+      url = "github:vt-d/nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # hypr
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
@@ -22,10 +27,16 @@
   outputs = {  nixpkgs, ... }@inputs: 
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system}; # incase i need it; unnecesary def
+    overlays = [
+       inputs.neovim.overlays.x86_64-linux.neovim
+    ];
+    pkgs = import nixpkgs { inherit system overlays; }; # incase i need it; unnecesary def
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+        inherit inputs;
+	inherit pkgs;
+      };
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default

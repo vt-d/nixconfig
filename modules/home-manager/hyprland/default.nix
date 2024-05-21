@@ -26,12 +26,17 @@
       brightnessctl
     ];
 
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
         "$mainMod" = "SUPER";
         "$terminal" = "${lib.getExe pkgs.foot}";
         "$menu" = "${lib.getExe pkgs.rofi-wayland} -show drun";
+
+	monitor = [
+          "eDP-1,disable"
+	];
         
         env = [
           "XDG_CURRENT_DESKTOP,Hyprland"

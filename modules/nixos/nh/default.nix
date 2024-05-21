@@ -4,6 +4,6 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/vt/nixos#default";
+    flake = "/home/vt/nixos";
   };
 }
