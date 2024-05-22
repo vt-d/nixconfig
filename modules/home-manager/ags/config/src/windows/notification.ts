@@ -15,7 +15,8 @@ const NotificationImageWidget = (n: Notification) => {
 
   let icon = Widget.Label({
     label: "",
-    css: "font-size: 48px;"
+    css: "font-size: 48px;",
+    className: 'img-notification'
   })
   if (Utils.lookUpIcon(n.app_icon)) {
     icon = n.app_icon;
@@ -30,7 +31,7 @@ const NotificationImageWidget = (n: Notification) => {
 
 const NotificationW = (n: Notification) => {
   const content = Widget.Box({
-    spacing: 24,
+    spacing: 8,
     visible: false,
     children: [
       NotificationImageWidget(n),
@@ -68,8 +69,8 @@ const NotificationW = (n: Notification) => {
     spacing: 8,
     visible: actions.length > 0,
     children: actions.map(({ id, label }, index) => Widget.Button({
-      className: index >= actions.length - 1 ? 'active' : 'solid',
-      child: Widget.Label(label),
+      className: index >= actions.length - 1 ? 'notifactive' : 'notifsolid',
+      child: Widget.Label({label: label, css: 'color: alpha(@base00, .5);'}),
 
       onClicked: () => {
         n.invoke(id);
