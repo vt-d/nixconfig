@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./files.nix
+    ./targets.nix
   ];
 
   config.stylix = {
