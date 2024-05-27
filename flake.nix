@@ -15,6 +15,10 @@
     stylix.url = "github:danth/stylix";
     ags.url = "github:Aylur/ags";
 
+    prismlauncher = {
+      url = "github:PrismLauncher/PrismLauncher";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
