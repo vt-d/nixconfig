@@ -3,6 +3,7 @@
   imports = [
     ./stylix
     ./nh
+    ./kde
   ];
 
   environment.systemPackages = [
