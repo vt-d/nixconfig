@@ -31,13 +31,12 @@
     overlays = [
        inputs.neovim.overlays.x86_64-linux.neovim
     ];
-    pkgs = import nixpkgs { inherit system overlays; }; # incase i need it; unnecesary def
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
       };
-      pkgs = pkgs;
+      pkgs = import nixpkgs { inherit system overlays; config = { allowUnfree = true; }; };
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default

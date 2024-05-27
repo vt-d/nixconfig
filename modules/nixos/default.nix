@@ -11,6 +11,7 @@
     pkgs.jetbrains-mono
   ];
 
+
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];

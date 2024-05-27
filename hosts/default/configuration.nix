@@ -22,6 +22,7 @@
   hardware.opentabletdriver.enable = true;
 
 
+
   # graphics support... nix, correctly name and separate your modules!!! 
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
@@ -51,6 +52,7 @@
     packages = with pkgs; [
       firefox
       tree
+      lunar-client
     ];
   };
 
