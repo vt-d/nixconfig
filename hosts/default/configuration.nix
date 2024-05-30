@@ -21,7 +21,7 @@
   networking.networkmanager.enable = true; 
   hardware.opentabletdriver.enable = true;
 
-
+  time.timeZone = "Asia/Kolkata";
 
   # graphics support... nix, correctly name and separate your modules!!! 
   hardware.opengl.enable = true;
