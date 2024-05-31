@@ -4,6 +4,7 @@
     ./stylix
     ./nh
     ./gnome
+    ./apps
   ];
 
   environment.systemPackages = [

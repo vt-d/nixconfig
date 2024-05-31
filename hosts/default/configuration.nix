@@ -4,7 +4,7 @@
 
 # Feel free to use this config without crediting me
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   imports =
     [
@@ -35,7 +35,7 @@
   services.blueman.enable = true;
 
   # stop alsa conflict
-  sound.enable = false;
+  hardware.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
     alsa = {
@@ -53,6 +53,11 @@
       firefox
       tree
       lunar-client
+      (lutris.override {
+         extraPkgs = pkgs: [
+             # List package dependencies here
+         ];
+      })
     ];
   };
 
